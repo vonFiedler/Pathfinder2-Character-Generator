@@ -1,0 +1,121 @@
+121002016030044058069080091102
+0003014Another orphan has challenged you for your small bit of turf.
+ANY00-1-1I throw them out of my territory, physically.
+ANY00-1-1I challenge them to a fist fight.
+ANY01-1-1I pants them in front of a group of other kids.
+ANY01-1-1Trouble? I'm getting out of here!
+ANY02-1-1Pfff. What can they do to me?
+ANY02-1-1I challenge them to a drinking contest.
+ANY03-1-1They think they can take what is mine? Then the game is on.
+ANY03-1-1I plan something devious to scare them away.
+ANY04-1-1If they think one corner of a massive city is worth anything, they can have it.
+ANY04-1-1I pray for deliverance from this trial.
+ANY05-1-1We could conquer this whole city if we worked together.
+ANY05-1-1I convince them that they would be better off trying elsewhere.
+
+0017028Another day, another copper. How do you plan to survive on the streets?
+ANY00-1-1I hear there is a monster in the sewers. I'm gonna fight it and eat it.
+ANY00-1-1I beat up a townie kid up and steal their copper.
+ANY01-1-1I pick some pockets.
+ANY01-1-1I grab any food I can and make a run for it.
+ANY02-1-1I scrounge food out of the garbage.
+ANY02-1-1I look for any menial labor, even though the wage will be small.
+ANY03-1-1I'm never going to survive in the long run if I don't teach myself to read.
+ANY03-1-1I imagine a bank heist I might pull if I was a bit older.
+ANY04-1-1I beg for food at the local mission, knowing I'll be preached at in exchange.
+ANY04-1-1I scrounge under tables for lost copper.
+ANY05-1-1I find a crowd and beg for copper.
+ANY05-1-1I try to befriend a local kid with money.
+
+0031042The local slum lord likes to know everyone living on their streets. How do you impress them?
+ANY00-1-1I challenge them to a fight so that I may replace them.
+ANY00-1-1I lift the biggest thing I can find, hoping that they're looking to hire some muscle.
+ANY01-1-1I'd rather escape their notice to be honest.
+ANY01-1-1I try to lift something off of them and then show them what I did.
+ANY02-1-1I only want them to think of me as a hard worker.
+ANY02-1-1I've lived this long on my own. I don't need their approval.
+ANY03-1-1I show off my self-education, a rare asset on the streets.
+ANY03-1-1I try to explain a way they could improve their "business".
+ANY04-1-1I use the opportunity to learn from them.
+ANY04-1-1I don't much approve of their morals, so I take the time to proselytize.
+ANY05-1-1I just talk to them and try to build a rapport.
+ANY05-1-1I'm the most impressive orphan in the world, or so they'll think after I build myself up.
+
+0045056At one point you are rounded up and placed into a state-run orphanage. Though it doesn't last forever, what do you do during your time there?
+ANY00-1-1With ample food, I use the opportunity to build up some muscle.
+ANY00-1-1Angered by my captivity, I start fights.
+ANY01-1-1This is not comfortable for me. I sneak out as soon as possible.
+ANY01-1-1I join a group of other orphans playing with slingshots.
+ANY02-1-1With ample food, I do sit-ups and crunches to build up my physical resistance.
+ANY02-1-1I help out around the orphanage, hoping I can get referred to an apprenticeship somewhere.
+ANY03-1-1I read every book that comes through those doors.
+ANY03-1-1I try to learn a new thing to increase my prospects.
+ANY04-1-1I ask the nuns about their god.
+ANY04-1-1I'm content for the first time in my life, knowing that this is a big step up from the hole I was living in.
+ANY05-1-1Finally, a bunch of kids my own age to get along with.
+ANY05-1-1I bully the other kids, hoping to start a gang of my own.
+
+1059067After a day without eating, you are walking down the street when you see a loaf of bread cooling on a window sill.
+ANY0610-1I find the people who live there and beg them for a bite to eat.
+ANY06-1-1I eat half of the bread, but throw a copper through the window the next time I can find one.
+ANY0612-1I run off with the loaf, as I know a few other orphans who need it just as much as I do.
+ANY10-1-1I tighten my belt. Hunger is better than jail.
+ANY-1-1-1I'm going for it!
+ANY12-1-1Their loss is my luck.
+ANY0810-1I walk on in resentment. When I'm so fortunate, I wouldn't be such a fool as them.
+ANY08-1-1I'll keep watch on this house and wait for the opportunity to steal a lot more than one loaf of bread.
+ANY0812-1I chuck it into the mud. If I can't eat, no one can.
+
+1070078You see a middle class family walking down the street. They seem happy.
+ANY0610-1Someday I'm going to start a family like that.
+ANY06-1-1Instead of being sad, I'm reminded that there is hope in the world.
+ANY0612-1I take my chances and try to start a new friendship.
+ANY10-1-1This is how the world functions. Some have a lot and some don't.
+ANY-1-1-1It is what it is.
+ANY12-1-1I actually like not having anyone to tell me what to do.
+ANY0810-1I'll be the one standing over them someday.
+ANY08-1-1I hate normies like that.
+ANY0812-1What do they think they're doing in crime alley? I chuck a rock at them.
+
+1081089A man grabs you, covers your mouth, and takes you aside into an alleyway. "You have to hide me," he says.
+ANY0610-1I cooperate, but at the first opportunity find a guard to alert. This city has too many scoundrels as is.
+ANY06-1-1If he's in desparate need, it doesn't matter to me what he's done. Perhaps genuine kindness can mend his ways.
+ANY0612-1I'll protect this man from any ne'er-do-wells that are after him!
+ANY10-1-1I don't want to be implicated in this, so I alert the guard as soon as possible.
+ANY-1-1-1I'll just do what he says so that I don't get hurt.
+ANY12-1-1This is far too interesting not to go along with.
+ANY0810-1I feign friendship, but look to see if he has a bounty I can claim later.
+ANY08-1-1His problems are his own. I kick him in the knee and run.
+ANY0812-1I help, but I want in on whatever his racket is.
+
+1092100A wealthy looking child has wandered into an alley you are in.
+ANY0610-1I quickly turn them around and explain in detail what a dangerous place this is.
+ANY06-1-1They must be looking for a friend!
+ANY0612-1They must be trying to escape their stuffy upper class life. This sounds like the start of a mutual adventure.
+ANY10-1-1This is a recipe for disaster. I want no part of it.
+ANY-1-1-1I watch and see what happens.
+ANY12-1-1I shake them down for anything of value. Nothing personal.
+ANY0810-1I "protect" them, hoping to toady up to them and gain a powerful friend.
+ANY08-1-1I beat them up and take their stuff. Serves them right for their naivety.
+ANY0812-1Time for a lesson in pain. They'll never come down my neck of the woods again.
+
+2103119You have found a comfortable amount of food and shelter for now, but you're smart enough to know that you'll never better your situation without training to better yourself.
+ANY16-1-1The guard will never catch me if I learn to tumble and squeeze.
+ANY17-1-1Maybe I can learn to cast spells someday if I try to understand as much arcane literature as I can find.
+ANY18-1-1I need to be tougher. If I have the extra food, I can go running each day.
+ANY19-1-1There's always an abundance of scrap to tinker with.
+ANY20-1-1I can always find a meal with the right con.
+ANY21-1-1I need to learn to make friends in higher places.
+ANY22-1-1I can always bully people into getting what I need.
+ANY23-1-1Information trade is everything on the streets. I'll learn whatever I can.
+ANY24-1-1It'd be nice to not die of the plague. I should learn about that.
+ANY25-1-1The city is a fool's game. I'll be hitting the outdoors as soon as I'm strong enough.
+ANY26-1-1The only ones with real power are the secret forces hiding behind society, and I'm going to find out how to contact them.
+ANY27-1-1You can always make a few copper in crowds by putting on a show.
+ANY28-1-1The clergy are the ultimate beggars. I'm going to figure them out.
+ANY29-1-1I'm going to conquer this class system by learning as much as I can about it.
+ANY30-1-1I'll be happy just staying out notice and trouble.
+ANY31-1-1I'll make due surviving in this city even if I have to figure out what garbage to eat.
+ANY32-1-1I'm just going to get better at stealing to get by.
+
+3 INSERT TRANSITION

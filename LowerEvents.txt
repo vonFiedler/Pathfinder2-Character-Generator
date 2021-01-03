@@ -1,0 +1,62 @@
+ORPHAN
+Ability 1
+Another orphan has challenged you for your small bit of turf.
+000707I throw them out of my territory, physically.
+000707I challenge them to a fist fight.
+010707I pants them in front of a group of other kids.
+010707Trouble? I'm getting out of here!
+020707Pfff. What can they do to me?
+020707I challenge them to a drinking contest.
+030707They think they can take what is mine? Then the game is on.
+030707I plan something devious to scare them away.
+040707If they think one corner of a massive city is worth anything, they can have it.
+040707I pray for deliverance from this trial.
+050707We could conquer this whole city if we worked together.
+050707I convince them that they would be better off trying elsewhere.
+
+Ability 2
+Another day, another copper. How do you plan to survive on the streets?
+000707I hear there is a monster in the sewers. I'm gonna fight it and eat it.
+000707I beat up a townie kid up and steal their copper.
+010707I pick some pockets.
+010707I grab any food I can and make a run for it.
+020707I scrounge food out of the garbage.
+020707I look for any menial labor, even though the wage will be small.
+030707I'm never going to survive in the long run if I don't teach myself to read.
+030707I imagine a bank heist I might pull if I was a bit older.
+040707I beg for food at the local mission, knowing I'll be preached at in exchange.
+040707I scrounge under tables for lost copper.
+050707I find a crowd and beg for copper.
+050707I try to befriend a local kid with money.
+
+Ability 3
+
+Ability 4
+
+Moral 1
+After a day without eating, you are walking down the street when you see a loaf of bread cooling on a window sill.
+061007I find the people who live there and beg them for a bite to eat.
+060707I eat half of the bread, but throw a copper through the window the next time I can find one.
+061207I run off with the loaf, as I know a few other orphans who need it just as much as I do.
+100707I tighten my belt. Hunger is better than jail.
+070707I'm going for it!
+120707Their loss is my luck.
+081007I walk on in resentment. When I'm so fortunate, I wouldn't be such a fool as them.
+080707I'll keep watch on this house and wait for the opportunity to steal a lot more than one loaf of bread.
+081207I chuck it into the mud. If I can't eat, no one can.
+
+Moral 2
+You see a middle class family walking down the street. They seem happy.
+061007Someday I'm going to start a family like that.
+060707Instead of being sad, I'm reminded that there is hope in the world.
+061207I take my chances and try to start a new friendship.
+100707This is how the world functions. Some have a lot and some don't.
+070707It is what it is.
+120707I actually like not having anyone to tell me what to do.
+081007I'll be the one standing over them someday.
+080707I hate normies like that.
+081207What do they think they're doing in crime alley? I chuck a rock at them.
+
+Moral 3
+
+Moral 4
