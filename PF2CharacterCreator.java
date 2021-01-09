@@ -282,6 +282,10 @@ public class PF2CharacterCreator {
          // Class Innateness
          new int[] { 0, 0, 0, 0 }         
       };
+      int skillNeed = 0;
+      
+      String[] flags = new String[16];
+      int flagCount = 1;
             
       String ancestry = ""; // Racial heritage
       String socialClass = ""; // Money at birth
@@ -454,11 +458,13 @@ public class PF2CharacterCreator {
          else
             ancestry = "Human";
       }
+      
+      skillNeed += bigStat[1][3];
 
       int[] genericEvents = new int[20];
       // This determines the user's social class and runs corresponding childhood events. Of course, only Middle Class is available right now.
       randomizee = randomizer.nextInt(100);      
-      if (randomizee >= 60) { // TEMP CHANGE, should be 85
+      if (randomizee >= 70) { // TEMP CHANGE, should be 85
          socialClass = "Middle Class"; // Should be Upper Class
          System.out.println("You are " + firstName + " " + lastName + ", a person of " + ancestry + " ancestry.");
          System.out.println("You were born to two middle class parents.");
@@ -480,7 +486,7 @@ public class PF2CharacterCreator {
 //         socialClass = "Middle Class";
 //         MiddleEvents childEvents = new MiddleEvents();
 //      }
-      else if (randomizee >= 0) {
+      else if (randomizee >= 30) {
          socialClass = "Lower Class";
          System.out.println("You are " + firstName + " " + lastName + ", a person of " + ancestry + " ancestry.");
          System.out.println("You were born to two lower class parents.");
@@ -496,9 +502,58 @@ public class PF2CharacterCreator {
          background = childEvents.determineBackground();
          genericEvents = childEvents.getEvents();
       }
-      else if (randomizee >= 12) {
+      else if (randomizee >= 0) {
          socialClass = "Orphan";
-         MiddleEvents childEvents = new MiddleEvents();
+         System.out.println("You are " + firstName + " " + lastName + ", a person of " + ancestry + " ancestry.");
+         System.out.println("You have never known your parents and live on the streets.");
+         BucketHandler childEvents = new BucketHandler();
+         childEvents.setFile("OrphanEvents.txt");
+         childEvents.setEvents();
+         childEvents.setEventCounters(3, 3, skillNeed);
+         childEvents.setSkills(bigStat);
+         int eventCounter = 6 + skillNeed;
+         while(eventCounter > 0) {
+            childEvents.runEvent();
+            choice = pickSix();
+            int[] rM = childEvents.getMatrix(choice - 1);
+            matrix(bigStat, rM);
+            eventCounter--;
+         }
+         if(bigStat[1][4] > 0 || bigStat[0][9] > 0 || bigStat[0][15] > 0) {
+            flags[flagCount] = "NAT";
+            flagCount++;
+         }
+         System.out.println("Seasons changes and you grow into young adulthood");
+         randomizee = randomizer.nextInt(10);
+         if(randomizee == 0) {
+            System.out.println("But try as you might, life does not improve for you. Will you be forced to survive on the streets forever?");
+            background = "Street Urchin";
+         }
+         else {
+            randomizee = randomizer.nextInt(20);
+            if(randomizee == 0) {
+               System.out.println("In the middle of the night, strong people tie you up and secret you away. You don't know where you are when the bag comes off of your head, but it's clear you don't have any choice but to work.");
+               background = "Prisoner";
+            }
+            else {
+               childEvents.runTransition();
+               choice = pickSix();
+               String backgroundT = childEvents.getBackground(choice -1);
+               int crimeWatch = 0;
+               if(bigStat[3][1] < 0)
+                  crimeWatch -= bigStat[3][1];
+               if(backgroundT.equals("Charlatan") || backgroundT.equals("Criminal") || backgroundT.equals("Gambler"))
+                  crimeWatch += 3;
+               randomizee = randomizer.nextInt(100) +1;
+               if(randomizee < crimeWatch) {
+                  System.out.println("However, it isn't long before you are caught for your crimes and put in prison.");
+                  background = "Prisoner";
+               }
+               else
+                  background = backgroundT;
+            }
+         }
+               
       }
       else {
          socialClass = "Tribal";
@@ -519,17 +574,20 @@ public class PF2CharacterCreator {
             break;
          }
          case "Artist":
-         case "Entertainer": {
+         case "Entertainer":
+         case "Gambler": {
             sortAble2(bigStat, 1, 5, true);
             break;
          }
          case "Barrister":
          case "Merchant":
-         case "Fortune Teller": {
+         case "Fortune Teller":
+         case "Charlatan": {
             sortAble2(bigStat, 3, 5, true);
             break;
          }
-         case "Scholar": {
+         case "Scholar":
+         case "Acolyte": {
             sortAble2(bigStat, 3, 4, true);
             break;
          }
@@ -537,7 +595,8 @@ public class PF2CharacterCreator {
             sortAble2(bigStat, 1, 3, true);
             break;
          }
-         case "Acrobat": {
+         case "Acrobat":
+         case "Martial Disciple": {
             sortAble2(bigStat, 0, 1, true);
             break;
          }
@@ -549,25 +608,66 @@ public class PF2CharacterCreator {
             sortAble2(bigStat, 1, 4, true);
             break;
          }
-         case "Laborer": {
+         case "Laborer":
+         case "Warrior": {
             sortAble2(bigStat, 0, 2, true);
             break;
          }
-         case "Miner": {
+         case "Miner":
+         case "Criminal": {
             sortAble2(bigStat, 0, 4, true);
             break;
          }
+         case "Street Urchin": {
+            sortAble2(bigStat, 1, 2, true);
+            break;
+         }
+         case "Animal Whisperer": {
+            sortAble2(bigStat, 4, 5, true);
+            break;
+         }
+         case "Herbalist":
+         case "Nomad": {
+            sortAble2(bigStat, 2, 4, true);
+            break;
+         }
+         case "Hermit": {
+            sortAble2(bigStat, 2, 3, true);
+            break;
+         }
       }
-
-      // Run events related to jobs. Final product requires a decision structure like with child events
-      JobEvents youngEvents = new JobEvents();
-      youngEvents.setBackground(background);
-      youngEvents.setEvents(genericEvents);
-      for(int a = 1; a <= 6; a++) {
-         youngEvents.runEvent();
-         choice = pickSix();
-         int[] rM = youngEvents.getMatrix(choice - 1);
-         matrix(bigStat, rM);
+      //FIX THIS
+      switch(background) {
+         case "Acrobat":
+         case "Artisan":
+         case "Artist":
+         case "Barkeep":
+         case "Barrister":
+         case "Emissary":
+         case "Entertainer":
+         case "Fortune Teller":
+         case "Herbalist":
+         case "Hunter":
+         case "Laborer":
+         case "Merchant":
+         case "Miner":
+         case "Scholar":
+         case "Tinkerer": {
+            JobEvents youngEvents = new JobEvents();
+            youngEvents.setBackground(background);
+            youngEvents.setEvents(genericEvents);
+            for(int a = 1; a <= 6; a++) {
+               youngEvents.runEvent();
+               choice = pickSix();
+               int[] rM = youngEvents.getMatrix(choice - 1);
+               matrix(bigStat, rM);
+            }
+            break;
+         }
+         default: {
+            System.out.println("The " + background + " background is not currently supported.");
+         }
+         
       }
       
       // Alignment determiner
