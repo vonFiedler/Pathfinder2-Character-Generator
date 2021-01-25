@@ -8,8 +8,8 @@ public class PF2CharacterCreator {
    // d6 randomizer that accepts an exception integer, preventing one roll
    public static int rollEx1(int ex1) {
    
-      int randomizee = 0;
       Random randomizer = new Random();
+      int randomizee;
       
       do {
          randomizee = randomizer.nextInt(6);
@@ -22,8 +22,8 @@ public class PF2CharacterCreator {
    // d6 randomizer that accepts two exception integers, preventing two rolls
    public static int rollEx2(int ex1, int ex2) {
    
-      int randomizee = 0;
       Random randomizer = new Random();
+      int randomizee;
       
       do {
          randomizee = randomizer.nextInt(6);
@@ -119,7 +119,8 @@ public class PF2CharacterCreator {
    public static void matrix(int[][] bigStat, int[] rM) {
 
       for(int i = 0; i < 4; i++) {
-         if(rM[i] >= 0) {  
+         if(rM[i] >= 0) {
+            System.out.println("Making adjustments");  
             switch(rM[i]) {
                case 0: {
                   bigStat[2][0]++; // Str
@@ -285,7 +286,7 @@ public class PF2CharacterCreator {
       int skillNeed = 0;
       
       String[] flags = new String[16];
-      int flagCount = 1;
+      int flagCount = 0;
             
       String ancestry = ""; // Racial heritage
       String socialClass = ""; // Money at birth
@@ -301,7 +302,7 @@ public class PF2CharacterCreator {
             
       Scanner keyboard = new Scanner(System.in);
 
-      System.out.println("The following is a demo. It only contains the event buckets for lower class, middle class, and jobs at the moment."); 
+      System.out.println("The following is a demo. It only contains the event buckets for lower class, middle class, orphans, and jobs at the moment."); 
       System.out.println();     
       System.out.println("Welcome to the character creator. Your choices will help determine the kind of character you will play.");
       System.out.println("What is your character's first name?");
@@ -309,155 +310,37 @@ public class PF2CharacterCreator {
       System.out.println("What is your character's last name?");
       lastName = keyboard.nextLine();
       
-      
-      // This determines the user's racial ancestry and their starting stats
-      randomizee = randomizer.nextInt(100);
-      
-      if(randomizee >= 90) {
-         ancestry = "Dwarf";
-         bigStat[1][2]++;
-         bigStat[1][4]++;
-         bigStat[1][5]--;
-            
-         randomizee = randomizer.nextInt(4);
-         switch(randomizee) {
-            case 0: {
-               bigStat[1][0]++;
-               break;
-            }
-            case 1: {
-               bigStat[1][1]++;
-               break;
-            }
-            case 2: {
-               bigStat[1][3]++;
-               break;
-               }
-            case 3: {
-               bigStat[1][5]++;
-               break;
-            }
-         }
+      // Determine and handle ancestry
+      Ancestry ancestryDNA = new Ancestry();
+      ancestryDNA.determineAncestry();
+      int[] bigStart = ancestryDNA.getStart();
+      for(int i = 0; i < 34; i++) {
+         System.out.println(i + " = " + bigStart[i]);
+         if(bigStart[i] == 1) {
+            int[] rM = { i, -1, -1, -1 };
+            matrix(bigStat, rM); }
+         if(bigStart[i] == 2) {
+            int[] rM = { i, i, -1, -1 };
+            matrix(bigStat, rM); }
       }
-      else if(randomizee >= 80)  {
-         ancestry = "Elf";
-         bigStat[1][1]++;
-         bigStat[1][3]++;
-         bigStat[1][2]--;
-            
-         randomizee = randomizer.nextInt(4);
-         switch(randomizee) {
-            case 0: {
-               bigStat[1][0]++;
-               break;
-            }
-            case 1: {
-               bigStat[1][2]++;
-               break;
-            }
-            case 2: {
-               bigStat[1][4]++;
-               break;
-            }
-            case 3: {
-               bigStat[1][5]++;
-               break;
-            }
-         }
-      }
-      else if(randomizee >= 70) {
-         ancestry = "Gnome";
-         bigStat[1][2]++;
-         bigStat[1][5]++;
-         bigStat[1][0]--;
-            
-         randomizee = randomizer.nextInt(4);
-         switch(randomizee) {
-            case 0: {
-               bigStat[1][0]++;
-               break;
-            }
-            case 1: {
-               bigStat[1][1]++;
-               break;
-            }
-            case 2: {
-               bigStat[1][3]++;
-               break;
-            }
-            case 3: {
-               bigStat[1][4]++;
-               break;
-            }
-         }
-      }
-      else if (randomizee >= 60) {
-         ancestry = "Goblin";
-         bigStat[1][1]++;
-         bigStat[1][5]++;
-         bigStat[1][4]--;
-            
-         randomizee = randomizer.nextInt(4);
-         switch(randomizee) {
-            case 0: {
-               bigStat[1][0]++;
-               break;
-            }
-            case 1: {
-               bigStat[1][2]++;
-               break;
-            }
-            case 2: {
-               bigStat[1][3]++;
-               break;
-            }
-            case 3: {
-               bigStat[1][4]++;
-               break;
-            }
-         }
-      }
-      else if (randomizee >= 50) {
-         ancestry = "Halfling";
-         bigStat[1][1]++;
-         bigStat[1][4]++;
-         bigStat[1][0]--;
-            
-         randomizee = randomizer.nextInt(4);
-         switch(randomizee) {
-            case 0: {
-               bigStat[1][0]++;
-               break;
-            }
-            case 1: {
-               bigStat[1][2]++;
-               break;
-            }
-            case 2: {
-               bigStat[1][3]++;
-               break;
-            }
-            case 3: {
-               bigStat[1][5]++;
-               break;
-            }
-         }
-      }
-      else {
+      System.out.println(bigStat[2][0]);   
+      ancestry = ancestryDNA.getAncestry();
+      if(ancestryDNA.getAbilityType().equals("Simple")){
          randomizee = randomizer.nextInt(6);
          bigStat[1][randomizee]++;
+         bigStat[1][rollEx1(randomizee)]++;
+         }
+      if(ancestryDNA.getAbilityType().equals("Complex")){
+         bigStat[1][ancestryDNA.getAbilities()[0]]++;
+         bigStat[1][ancestryDNA.getAbilities()[1]]++;
+         bigStat[1][ancestryDNA.getAbilities()[2]]--;
+         bigStat[1][rollEx2(ancestryDNA.getAbilities()[0], ancestryDNA.getAbilities()[1])]++;
+         }
+      if(!ancestryDNA.getFlag1().isEmpty())
+         flags[flagCount] = ancestryDNA.getFlag1(); flagCount++;
+      if(!ancestryDNA.getFlag2().isEmpty())
+         flags[flagCount] = ancestryDNA.getFlag2(); flagCount++;
             
-         randomizee = rollEx1(randomizee);
-         bigStat[1][randomizee]++;
-         if(randomizee >= 40) {
-            ancestry = "Half-Elf";
-         }
-         else if(randomizee >= 30) {
-            ancestry = "Half-Orc";
-         }
-         else
-            ancestry = "Human";
-      }
       
       skillNeed += bigStat[1][3];
 
